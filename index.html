@@ -23,6 +23,7 @@
   :root {
     --blush: #fff4ef;
     --yellow: #f2ee9e;
+    --yellow-deep: #e9e37f;
     --ink: #2b2b23;
     --ink-soft: #55523f;
     --line: rgba(43,43,35,0.35);
@@ -54,17 +55,17 @@
   .wrap {
     position: relative;
     z-index: 2;
-    max-width: 600px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 48px 24px 96px;
     text-align: center;
   }
 
   .logo {
-    width: 115px;
+    width: 180px;
     height: auto;
     display: block;
-    margin: 0 auto 20px;
+    margin: 0 auto 24px;
   }
 
   .script-heading {
@@ -93,6 +94,13 @@
     font-size: 15px;
   }
 
+  .embed-placeholder {
+    padding: 48px 32px;
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 15px;
+  }
+
   #booqable-embed .booqable-product-list {
     font-family: 'Work Sans', sans-serif;
     padding: 24px;
@@ -103,6 +111,9 @@
   }
 
   #booqable-embed .collection-page__items {
+    max-width: 900px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
     justify-content: center !important;
   }
@@ -115,6 +126,10 @@
   #booqable-embed .booqable-product-list {
     font-size: 15px !important;
     color: var(--ink) !important;
+  }
+
+  #booqable-embed .booqable-product-list-notice {
+    display: none !important;
   }
 
   footer {
@@ -144,10 +159,10 @@
   <div class="script-heading">Hire a bike box today</div>
 
   <div class="booking-panel">
-   <div id="booqable-embed">
-  <div class="booqable-datepicker"></div>
-  <div class="booqable-product-list"></div>
-</div>
+    <div id="booqable-embed">
+      <div class="booqable-datepicker"></div>
+      <div class="booqable-product-list"></div>
+    </div>
   </div>
 
   <footer>
