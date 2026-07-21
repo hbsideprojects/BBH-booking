@@ -41,15 +41,31 @@
     overflow-x: hidden;
   }
 
-  .blob {
+  .shape {
     position: absolute;
-    top: -40px;
-    right: -160px;
-    width: 520px;
-    height: 520px;
-    background: var(--yellow);
-    border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%;
     z-index: 0;
+    pointer-events: none;
+  }
+
+  .shape-topright {
+    top: 0;
+    right: 0;
+    width: 380px;
+    height: auto;
+  }
+
+  .shape-topleft {
+    top: 40px;
+    left: -60px;
+    width: 340px;
+    height: auto;
+  }
+
+  .shape-bottomleft {
+    bottom: 0;
+    left: -40px;
+    width: 260px;
+    height: auto;
   }
 
   .wrap {
@@ -143,7 +159,9 @@
 
   @media (max-width: 480px) {
     .script-heading { font-size: 24px; }
-    .blob { width: 380px; height: 380px; top: -30px; right: -140px; }
+    .shape-topright { width: 220px; }
+    .shape-topleft { width: 200px; top: 20px; left: -40px; }
+    .shape-bottomleft { width: 150px; }
     .logo { width: 96px; }
     .wrap { padding: 40px 18px 72px; }
   }
@@ -151,7 +169,9 @@
 </head>
 <body>
 
-<div class="blob"></div>
+<img src="shape-topleft.png" alt="" class="shape shape-topleft">
+<img src="shape-topright.png" alt="" class="shape shape-topright">
+<img src="shape-bottomleft.png" alt="" class="shape shape-bottomleft">
 
 <div class="wrap">
   <img src="logo.png" alt="BikeBoxHire.io" class="logo">
