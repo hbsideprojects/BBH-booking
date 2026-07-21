@@ -17,16 +17,15 @@
 <meta name="twitter:description" content="Hire a hard-shell bike box for your next race or cycling trip.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Beth+Ellen&family=Anton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Beth+Ellen&display=swap" rel="stylesheet">
 <script src="https://35d21e19-6924-4e55-a964-06e3ac0bedd2.assets.booqable.com/v2/booqable.js"></script>
 <style>
   :root {
-    --blush: #fbe9e2;
-    --yellow: #f0e79a;
-    --yellow-deep: #e9de84;
+    --blush: #fff4ef;
+    --yellow: #f2ee9e;
     --ink: #2b2b23;
     --ink-soft: #55523f;
-    --line: rgba(43,43,35,0.18);
+    --line: rgba(43,43,35,0.35);
     --white: #ffffff;
   }
 
@@ -43,53 +42,29 @@
 
   .blob {
     position: absolute;
-    top: -60px;
-    right: -140px;
-    width: 620px;
-    height: 620px;
+    top: -40px;
+    right: -160px;
+    width: 520px;
+    height: 520px;
     background: var(--yellow);
     border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%;
     z-index: 0;
   }
 
-  .bike-icon {
-    position: absolute;
-    top: 128px;
-    right: 300px;
-    width: 28px;
-    height: 28px;
-    color: var(--ink);
-    z-index: 1;
-    transform: rotate(8deg);
-  }
-
   .wrap {
     position: relative;
     z-index: 2;
-    max-width: 760px;
+    max-width: 600px;
     margin: 0 auto;
-    padding: 64px 24px 96px;
+    padding: 48px 24px 96px;
+    text-align: center;
   }
 
-  header {
-    margin-bottom: 8px;
-  }
-
-  h1 {
-    font-family: 'Zing Rust Base', 'Anton', sans-serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 46px;
-    letter-spacing: 0.09em;
-    margin: 0 0 10px;
-    line-height: 0.87;
-  }
-
-  .tagline {
-    font-size: 15px;
-    color: var(--ink-soft);
-    margin: 0 0 40px;
-    max-width: 420px;
+  .logo {
+    width: 115px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
   }
 
   .script-heading {
@@ -98,17 +73,17 @@
     font-size: 30px;
     color: var(--ink);
     text-align: center;
-    margin: 0 0 28px;
+    margin: 0 0 24px;
   }
 
   .booking-panel {
     background: var(--white);
-    border: 1px solid var(--line);
-    border-radius: 6px;
+    border: 1px solid var(--ink);
+    border-radius: 0;
     padding: 0;
     min-height: 480px;
     overflow: hidden;
-    box-shadow: 0 12px 32px rgba(43,43,35,0.08);
+    text-align: left;
   }
 
   #booqable-embed {
@@ -118,17 +93,66 @@
     font-size: 15px;
   }
 
-  .embed-placeholder {
-    padding: 48px 32px;
-    text-align: center;
-    color: var(--ink-soft);
-    font-size: 15px;
-  }
-
   #booqable-embed .booqable-product-list {
     font-family: 'Work Sans', sans-serif;
     padding: 24px;
   }
 
   #booqable-embed .header-search {
-    display: none
+    display: none !important;
+  }
+
+  #booqable-embed .collection-page__items {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+    justify-content: center !important;
+  }
+
+  #booqable-embed .booqable-product-list,
+  #booqable-embed .booqable-product-list * {
+    font-family: 'Work Sans', sans-serif !important;
+  }
+
+  #booqable-embed .booqable-product-list {
+    font-size: 15px !important;
+    color: var(--ink) !important;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  footer a { color: var(--ink-soft); }
+
+  @media (max-width: 480px) {
+    .script-heading { font-size: 24px; }
+    .blob { width: 380px; height: 380px; top: -30px; right: -140px; }
+    .logo { width: 96px; }
+    .wrap { padding: 40px 18px 72px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="blob"></div>
+
+<div class="wrap">
+  <img src="logo.png" alt="BikeBoxHire.io" class="logo">
+
+  <div class="script-heading">Hire a bike box today</div>
+
+  <div class="booking-panel">
+    <div id="booqable-embed">
+      <div class="booqable-product-list"></div>
+    </div>
+  </div>
+
+  <footer>
+    <a href="https://bikeboxhire.io">&larr; Back to BikeBoxHire.io</a>
+  </footer>
+</div>
+
+</body>
+</html>
