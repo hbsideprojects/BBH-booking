@@ -17,13 +17,12 @@
 <meta name="twitter:description" content="Hire a hard-shell bike box for your next race or cycling trip.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Beth+Ellen&family=Anton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Beth+Ellen&display=swap" rel="stylesheet">
 <script src="https://35d21e19-6924-4e55-a964-06e3ac0bedd2.assets.booqable.com/v2/booqable.js"></script>
 <style>
   :root {
     --blush: #fff4ef;
     --yellow: #f2ee9e;
-    --yellow-deep: #e9e37f;
     --ink: #2b2b23;
     --ink-soft: #55523f;
     --line: rgba(43,43,35,0.35);
@@ -106,3 +105,117 @@
   #booqable-embed {
     width: 100%;
     min-height: 480px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 15px;
+  }
+
+  .embed-placeholder {
+    padding: 48px 32px;
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 15px;
+  }
+
+  #booqable-embed .booqable-product-list {
+    font-family: 'Work Sans', sans-serif;
+    padding: 24px;
+  }
+
+  #booqable-embed .header-search {
+    display: none !important;
+  }
+
+  #booqable-embed .collection-page__items {
+    max-width: 900px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+    justify-content: center !important;
+  }
+
+  #booqable-embed .booqable-product-list,
+  #booqable-embed .booqable-product-list * {
+    font-family: 'Work Sans', sans-serif !important;
+  }
+
+  #booqable-embed .booqable-product-list {
+    font-size: 15px !important;
+    color: var(--ink) !important;
+  }
+
+  #booqable-embed .booqable-datepicker {
+    padding: 20px 24px 0;
+  }
+
+  #booqable-embed .bq-date-picker-button-wrapper {
+    background: var(--ink) !important;
+    color: var(--yellow) !important;
+    border-radius: 4px !important;
+    border: none !important;
+  }
+
+  #booqable-embed .bq-date-picker-button-text {
+    color: var(--yellow) !important;
+  }
+
+  #booqable-embed .booqable-product-list-notice {
+    display: none !important;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  footer a { color: var(--ink-soft); }
+
+  @media (max-width: 480px) {
+    .script-heading { font-size: 24px; }
+    .shape-topright { width: 220px; }
+    .shape-topleft { width: 200px; top: 20px; left: -40px; }
+    .shape-bottomleft { width: 150px; }
+    .logo { width: 96px; }
+    .wrap { padding: 40px 18px 72px; }
+  }
+</style>
+</head>
+<body>
+
+<img src="shape-topleft.png" alt="" class="shape shape-topleft">
+<img src="shape-topright.png" alt="" class="shape shape-topright">
+<img src="shape-bottomleft.png" alt="" class="shape shape-bottomleft">
+
+<div class="wrap">
+  <img src="logo.png" alt="BikeBoxHire.io" class="logo">
+
+  <div class="script-heading">Hire a bike box today</div>
+
+  <div class="booking-panel">
+    <div id="booqable-embed">
+      <div class="booqable-datepicker"></div>
+      <div class="booqable-product-list"></div>
+    </div>
+  </div>
+
+  <footer>
+    <a href="https://bikeboxhire.io">&larr; Back to BikeBoxHire.io</a>
+  </footer>
+</div>
+
+<script>
+  function updateButtonText() {
+    document.querySelectorAll('.bq-date-picker-button-text').forEach(function (el) {
+      if (el.textContent.trim() !== 'Check hire period and prices') {
+        el.textContent = 'Check hire period and prices';
+      }
+    });
+  }
+  var observer = new MutationObserver(updateButtonText);
+  observer.observe(document.body, { childList: true, subtree: true, characterData: true });
+  updateButtonText();
+</script>
+
+</body>
+</html>
