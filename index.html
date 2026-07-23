@@ -172,8 +172,28 @@
   }
   }
   
-  #booqable-embed .bq-button.bq-branded {
-    display: none !important;
+#booqable-embed .bq-button.bq-branded {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #2b2b23 !important;
+}
+
+#booqable-embed .bq-button.bq-branded i,
+#booqable-embed .bq-button.bq-branded svg {
+  display: none !important;
+}
+
+#booqable-embed .bq-button.bq-branded::after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("white_arrow_icon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 }
 
   footer {
