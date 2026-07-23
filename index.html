@@ -245,6 +245,24 @@
   var observer = new MutationObserver(updateButtonText);
   observer.observe(document.body, { childList: true, subtree: true, characterData: true });
   updateButtonText();
+
+  function ensureArrowIcon() {
+    document.querySelectorAll('#booqable-embed .bq-button.bq-branded').forEach(function (btn) {
+      if (!btn.querySelector('.bbh-arrow-icon')) {
+        btn.innerHTML = '';
+        var img = document.createElement('img');
+        img.src = 'white-arrow-icon.png';
+        img.className = 'bbh-arrow-icon';
+        img.style.width = '16px';
+        img.style.height = '16px';
+        img.style.display = 'block';
+        btn.appendChild(img);
+      }
+    });
+  }
+  var arrowObserver = new MutationObserver(ensureArrowIcon);
+  arrowObserver.observe(document.body, { childList: true, subtree: true });
+  ensureArrowIcon();
 </script>
 <!-- ============================================================
      BikeBoxHire.io — Shared Site Footer
